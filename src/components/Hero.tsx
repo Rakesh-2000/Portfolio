@@ -40,7 +40,7 @@ const Hero = () => {
           }}
           className="relative w-full max-w-xs mx-auto overflow-hidden pr-10 sm:pr-0"
         >
-          <img
+          <img 
             src={Rakesh}
             alt="Rakesh"
             className="w-full h-full object-cover grayscale"
