@@ -4,12 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "homepage": "https://rakesh-2000.github.io/Portfolio",
-
   "scripts": {
     "dev": "vite",
-  "build": "vite build",
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist"
+    "build": "vite build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "lucide-react": "^0.344.0",

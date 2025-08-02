@@ -38,7 +38,7 @@ const Hero = () => {
             marginRight:50,
             height:300
           }}
-          className="relative w-full max-w-xs mx-auto overflow-hidden"
+          className="relative w-full max-w-xs mx-auto overflow-hidden pr-10 sm:pr-0"
         >
           <img
             src={Rakesh}
