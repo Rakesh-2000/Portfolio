@@ -59,7 +59,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 px-6">
+    <section id="connect" className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#f8fcff]">
@@ -71,7 +71,7 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="flex flex-col items-center justify-center text-center space-y-10">
           {/* Contact Form */}
           {/* <div className="bg-[#000] p-8 rounded-[5px] border border-[#ffe871]/20">
             <h3 className="text-2xl font-bold text-[#f8fcff] mb-6">
@@ -163,8 +163,8 @@ const Contact = () => {
           </div> */}
 
           {/* Contact Info & Social Links */}
-          <div className="space-y-8 ">
-            <div>
+          <div className="flex flex-col text-center space-y-10">
+            {/* <div>
               <h3 className="text-2xl font-bold text-[#f8fcff] mb-6">
                 Get In Touch
               </h3>
@@ -173,8 +173,8 @@ const Contact = () => {
                 projects.
               </p>
             </div>
-  
-            <div className="space-y-4">
+
+            <div className="flex justify-center space-x-4">
               <div className="flex items-center space-x-4 p-4 bg-[#1a1f2e] rounded-xl border border-[#ffe871]/20">
                 <div className="w-12 h-12 bg-[#ffe871]/20 rounded-lg flex items-center justify-center">
                   <Mail className="w-6 h-6 text-[#ffe871]" />
@@ -204,46 +204,36 @@ const Contact = () => {
                   </a>
                 </div>
               </div>
-
-              {/* <div className="flex items-center space-x-4 p-4 bg-[#1a1f2e] rounded-xl border border-[#ffe871]/20">
-                <div className="w-12 h-12 bg-[#ffe871]/20 rounded-lg flex items-center justify-center">
-                  <MapPin className="w-6 h-6 text-[#ffe871]" />
-                </div>
-                <div>
-                  <p className="text-[#f8fcff] font-medium">Location</p>
-                  <p className="text-[#ffe871]">Available Worldwide</p>
-                </div>
-              </div> */}
-            </div>
+            </div> */}
 
             <div>
               <h4 className="text-xl font-bold text-[#f8fcff] mb-4">
                 Follow Me
               </h4>
-              <div className="flex space-x-4">
+              <div className="flex justify-center space-x-4">
                 <a
                   href="https://github.com/Rakesh-2000"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 bg-[#ffe871]/20 hover:bg-[#ffe871]/30 rounded-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110 group"
+                  className="w-24 h-24 bg-[#ffe871]/20 hover:bg-[#ffe871]/30 rounded-[5px] flex items-center justify-center transition-all duration-300 transform hover:scale-110 group"
                 >
-                  <Github className="w-6 h-6 text-[#ffe871] group-hover:text-[#f8fcff]" />
+                  <Github className="w-12 h-12 text-[#fff] group-hover:text-[#f8fcff]" />
                 </a>
                 <a
                   href="http://www.linkedin.com/in/rakesh-b-s2000"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 bg-[#ffe871]/20 hover:bg-[#ffe871]/30 rounded-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110 group"
+                  className="w-24 h-24 bg-[#ffe871]/20 hover:bg-[#ffe871]/30 rounded-[5px] flex items-center justify-center transition-all duration-300 transform hover:scale-110 group"
                 >
-                  <Linkedin className="w-6 h-6 text-[#ffe871] group-hover:text-[#f8fcff]" />
+                  <Linkedin className="w-12 h-12 text-[#fff] group-hover:text-[#f8fcff]" />
                 </a>
                 <a
                   href="mailto:rakeshseervee2000@gmail.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 bg-[#ffe871]/20 hover:bg-[#ffe871]/30 rounded-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110 group"
+                  className="w-24 h-24 bg-[#ffe871]/20 hover:bg-[#ffe871]/30 rounded-[5px] flex items-center justify-center transition-all duration-300 transform hover:scale-110 group"
                 >
-                  <Mail className="w-6 h-6 text-[#ffe871] group-hover:text-[#f8fcff]" />
+                  <Mail className="w-12 h-12 text-[#fff] group-hover:text-[#f8fcff]" />
                 </a>
               </div>
             </div>

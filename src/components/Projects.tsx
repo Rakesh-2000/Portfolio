@@ -115,7 +115,7 @@ const Projects = () => {
           {/* Navigation Buttons */}
           <button
             onClick={prevProject}
-            className="absolute left-8 z-20 w-12 h-12 bg-[#ffe871]/20 hover:bg-[#ffe871]/30 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110"
+            className="absolute left-0 sm:left-8 z-20 w-10 h-10 sm:w-12 sm:h-12 bg-[#ffe871]/20 hover:bg-[#ffe871]/30 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110"
           >
             <svg
               className="w-6 h-6 text-[#ffe871]"
@@ -134,7 +134,7 @@ const Projects = () => {
 
           <button
             onClick={nextProject}
-            className="absolute right-8 z-20 w-12 h-12 bg-[#ffe871]/20 hover:bg-[#ffe871]/30 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110"
+            className="absolute right-0 sm:right-8 z-20 w-10 h-10 sm:w-12 sm:h-12 bg-[#ffe871]/20 hover:bg-[#ffe871]/30 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110"
           >
             <svg
               className="w-6 h-6 text-[#ffe871]"
@@ -154,7 +154,11 @@ const Projects = () => {
           {/* Project Carousel Container */}
           <div className="relative flex items-center justify-center w-full max-w-6xl">
             {/* Left Project (Half Visible) */}
-            <div className="absolute left-40 z-5 transform -translate-x-1/4 opacity-50 scale-80 transition-all duration-500">
+            <div
+              className="absolute left-[200px] z-5 transform -translate-x-1/4 opacity-50 scale-80 transition-all duration-500
+  hidden md:block"
+            >
+              {" "}
               <div className="w-64 h-96 rounded-2xl overflow-hidden shadow-lg">
                 <img
                   src={
@@ -170,7 +174,11 @@ const Projects = () => {
             </div>
 
             {/* Right Project (Half Visible) */}
-            <div className="absolute right-40 z-5 transform translate-x-1/4 opacity-50 scale-80 transition-all duration-500">
+            <div
+              className="absolute right-[200px] z-5 transform translate-x-1/4 opacity-50 scale-80 transition-all duration-500
+  hidden md:block"
+            >
+              {" "}
               <div className="w-64 h-96 rounded-2xl overflow-hidden shadow-lg">
                 <img
                   src={projects[(currentProject + 1) % projects.length].image}
@@ -184,7 +192,8 @@ const Projects = () => {
             {/* Main Mobile Phone Mockup (Center) */}
             <div className="relative z-10">
               {/* Phone Frame */}
-              <div className="w-80 h-[600px] bg-gray-900 rounded-[3rem] p-2 shadow-2xl">
+              {/* Phone Frame */}
+              <div className="w-64 sm:w-72 md:w-80 h-[480px] sm:h-[540px] md:h-[600px] bg-gray-900 rounded-[3rem] p-2 shadow-2xl mx-auto">
                 <div className="w-full h-full bg-black rounded-[2.5rem] p-2 relative overflow-hidden">
                   {/* Screen */}
                   <div className="w-full h-full bg-white rounded-[2rem] overflow-hidden relative">
@@ -197,7 +206,7 @@ const Projects = () => {
                   </div>
 
                   {/* Home Indicator */}
-                  <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-white rounded-full"></div>
+                  <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-20 sm:w-24 h-1 bg-white rounded-full"></div>
                 </div>
               </div>
             </div>
@@ -230,7 +239,7 @@ const Projects = () => {
             {projects[currentProject].tech.map((technology) => (
               <span
                 key={technology}
-                className="px-4 py-2 bg-[#ffe871]/20 text-[#ffe871] rounded-full text-sm font-medium"
+                className="px-4 py-2 bg-[#ffe871]/20 text-[#ffe871] rounded-[5px] text-sm font-medium"
               >
                 {technology}
               </span>
@@ -246,7 +255,7 @@ const Projects = () => {
                 setSelectedProject(projects[currentProject]);
                 setIsModalOpen(true);
               }}
-              className="px-6 py-3 border-2 border-[#ffe871] text-[#ffe871] font-bold rounded-lg hover:bg-[#ffe871] hover:text-[#202733] transition-all duration-300 transform hover:scale-105"
+              className="px-6 py-3 border-2 border-[#ffe871] text-[#ffe871] font-bold rounded-[5px] hover:bg-[#ffe871] hover:text-[#202733] transition-all duration-300 transform hover:scale-105"
             >
               Read more
             </button>
@@ -267,7 +276,7 @@ const Projects = () => {
       <div>
         {isModalOpen && selectedProject && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm px-4 ">
-            <div className="bg-[#000] border border-[#ffe871]/30 text-white rounded-xl max-w-xl w-full p-6 relative">
+            <div className="bg-[#000] border border-[#ffe871]/30 text-white rounded-xl w-full max-w-xl p-4 sm:p-6 relative max-h-[90vh] overflow-y-auto">
               <button
                 onClick={() => setIsModalOpen(false)}
                 className="absolute top-3 right-3 text-[#ffe871] text-xl hover:text-white"
@@ -300,7 +309,7 @@ const Projects = () => {
           {/* Navigation Buttons */}
           <button
             onClick={prevWebProject}
-            className="absolute left-8 z-20 w-12 h-12 bg-[#ffe871]/20 hover:bg-[#ffe871]/30 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110"
+            className=" hidden md:flex absolute  left-0 z-20 w-12 h-12 bg-[#ffe871]/20 hover:bg-[#ffe871]/30 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110"
           >
             <svg
               className="w-6 h-6 text-[#ffe871]"
@@ -319,7 +328,7 @@ const Projects = () => {
 
           <button
             onClick={nextWebProject}
-            className="absolute right-8 z-20 w-12 h-12 bg-[#ffe871]/20 hover:bg-[#ffe871]/30 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110"
+            className=" hidden md:flex absolute right-0 z-20 w-12 h-12 bg-[#ffe871]/20 hover:bg-[#ffe871]/30 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110"
           >
             <svg
               className="w-6 h-6 text-[#ffe871]"
@@ -339,7 +348,7 @@ const Projects = () => {
           <div>
             {isModalOpen && selectedProject && (
               <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm px-4 ">
-                <div className="bg-[#000] border border-[#ffe871]/30 text-white rounded-xl max-w-xl w-full p-6 relative">
+                <div className="bg-[#000] border border-[#ffe871]/30 text-white rounded-xl w-full max-w-xl p-4 sm:p-6 relative max-h-[90vh] overflow-y-auto">
                   <button
                     onClick={() => setIsModalOpen(false)}
                     className="absolute top-3 right-3 text-[#ffe871] text-xl hover:text-white"
@@ -388,7 +397,7 @@ const Projects = () => {
               {/* Laptop Frame */}
               <div className="relative">
                 {/* Laptop Screen */}
-                <div className="w-[500px] h-[320px] bg-gray-900 rounded-t-2xl p-4 shadow-2xl">
+                <div className="w-full max-w-[500px] aspect-video bg-gray-900 rounded-t-2xl p-4 shadow-2xl">
                   <div className="w-full h-full bg-black rounded-xl overflow-hidden relative">
                     <img
                       src={webProjects[currentWebProject].image}
@@ -400,7 +409,7 @@ const Projects = () => {
                 </div>
 
                 {/* Laptop Base */}
-                <div className="w-[500px] h-8 bg-gray-800 rounded-b-2xl -mt-1 relative">
+                <div className="w-full max-w-[500px] h-6 bg-gray-800 rounded-b-2xl -mt-1 relative">
                   <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-1 bg-gray-600 rounded-full"></div>
                 </div>
               </div>
@@ -423,7 +432,7 @@ const Projects = () => {
             {webProjects[currentWebProject].tech.map((technology) => (
               <span
                 key={technology}
-                className="px-4 py-2 bg-[#ffe871]/20 text-[#ffe871] rounded-full text-sm font-medium"
+                className="px-4 py-2 bg-[#ffe871]/20 text-[#ffe871] rounded-[5px] text-sm font-medium"
               >
                 {technology}
               </span>
@@ -439,14 +448,14 @@ const Projects = () => {
                 setSelectedProject(webProjects[currentWebProject]);
                 setIsModalOpen(true);
               }}
-              className="px-6 py-3 border-2 border-[#ffe871] text-[#ffe871] font-bold rounded-lg hover:bg-[#ffe871] hover:text-[#202733] transition-all duration-300 transform hover:scale-105"
+              className="px-6 py-3 border-2 border-[#ffe871] text-[#ffe871] font-bold rounded-[5px] hover:bg-[#ffe871] hover:text-[#202733] transition-all duration-300 transform hover:scale-105"
             >
               Read more
             </button>
           </div>
         </div>
       </div>
-      <div className="flex justify-center space-x-2 mt-8">
+      <div className="hidden flex justify-center space-x-2 mt-8">
         {webProjects.map((_, index) => (
           <button
             key={index}

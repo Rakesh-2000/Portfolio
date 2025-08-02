@@ -20,10 +20,10 @@ const Hero = () => {
     >
       {/* Radial background glow */}
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-        <div className="w-[900px] h-[700px] rounded-full bg-[#ffe871] opacity-10 blur-3xl"></div>
+        <div className="w-[900px] h-[500px] rounded-full bg-[#ffe871] opacity-10 blur-3xl"></div>
       </div>
 
-      <div className="max-w-4xl mx-auto text-center relative z-10">
+      <div className=" max-w-4xl mx-auto text-center relative z-10">
         {/* Avatar */}
         <div
           style={{

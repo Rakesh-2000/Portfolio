@@ -27,7 +27,7 @@ const WorkExperience: React.FC = () => {
       </h2>
       <div className="space-y-10">
         {workExperiences.map(({ company, role, duration, description, logo }, index) => (
-          <div key={index} className="flex items-center space-x-6 bg-[#111] rounded-2xl p-6 shadow-lg">
+          <div key={index} className="flex items-center space-x-6 bg-[#111] rounded-[5px] p-6 shadow-lg">
             {/* {logo && (
               <img src={logo} alt={`${company} logo`} className="w-16 h-16 object-contain rounded-lg" />
             )} */}

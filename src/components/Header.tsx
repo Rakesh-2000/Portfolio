@@ -25,14 +25,14 @@ const Header = () => {
         isScrolled ? 'bg-[#202733] bg-transparent' : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4">
+      <div className=" max-w-7xl mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
           <div className="text-5xl font-bold text-[#ffe871]">
             RAKESH
           </div>
           
           <nav className="hidden md:flex space-x-8">
-            {['Home', 'About', 'Contact'].map((item) => (
+            {['Home', 'About', 'Connect'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase())}
@@ -44,11 +44,11 @@ const Header = () => {
             ))}
           </nav>
 
-          <button className="md:hidden text-[#f8fcff] hover:text-[#ffe871] transition-colors">
+          {/* <button className="md:hidden text-[#f8fcff] hover:text-[#ffe871] transition-colors">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
-          </button>
+          </button> */}
         </div>
       </div>
     </header>
