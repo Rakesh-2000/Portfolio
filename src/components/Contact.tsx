@@ -173,7 +173,7 @@ const Contact = () => {
                 projects.
               </p>
             </div>
-
+ 
             <div className="space-y-4">
               <div className="flex items-center space-x-4 p-4 bg-[#1a1f2e] rounded-xl border border-[#ffe871]/20">
                 <div className="w-12 h-12 bg-[#ffe871]/20 rounded-lg flex items-center justify-center">
