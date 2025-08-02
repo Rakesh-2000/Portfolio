@@ -21,7 +21,7 @@ const workExperiences: WorkExperienceType[] = [
 
 const WorkExperience: React.FC = () => {
   return (
-    <section className="max-w-6xl mx-auto py-20 px-6 bg-[#000] text-[#f8fcff]">
+    <section className="font-ubuntu max-w-6xl mx-auto py-20 px-6 bg-[#000] text-[#f8fcff]">
       <h2 className="text-4xl font-bold mb-12 text-center">
         Where I've Worked
       </h2>

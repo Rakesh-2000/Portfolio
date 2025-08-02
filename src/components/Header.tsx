@@ -27,11 +27,11 @@ const Header = () => {
     >
       <div className=" max-w-7xl mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
-          <div className="text-5xl font-bold text-[#ffe871]">
+          <div className="font-ubuntu text-5xl font-bold text-[#ffe871]">
             RAKESH
           </div>
           
-          <nav className="hidden md:flex space-x-8">
+          <nav className="font-ubuntu hidden md:flex space-x-8">
             {['Home', 'About', 'Connect'].map((item) => (
               <button
                 key={item}

@@ -46,7 +46,7 @@ const TechStack = () => {
   return (
     <section
       id="about"
-      className="py-20 px-6 bg-black relative overflow-hidden"
+      className="font-ubuntu py-20 px-6 bg-black relative overflow-hidden"
     >
       {/* Keyframes for desktop carousel */}
       <style>

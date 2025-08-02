@@ -49,7 +49,7 @@ const Hero = () => {
         </div>
 
         {/* Name */}
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-[#ffe871] to-[#ffe871] bg-clip-text text-transparent flex justify-center space-x-1">
+        <h1 className="font-ubuntu text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-[#ffe871] to-[#ffe871] bg-clip-text text-transparent flex justify-center space-x-1">
           {fullName.split("").map((char, idx) => (
             <span
               key={idx}
@@ -63,13 +63,13 @@ const Hero = () => {
         </h1>
 
         {/* Title */}
-        <p className="text-xl md:text-2xl mb-8 text-[#f8fcff]/80 leading-relaxed">
+        <p className="font-ubuntu text-xl md:text-2xl mb-8 text-[#f8fcff]/80 leading-relaxed">
           Software Developer
         </p>
 
         {/* Experience Tags */}
         <div className="flex items-center justify-center space-x-4 mb-8">
-          <span className="px-4 py-2 bg-[#ffe871]/20 rounded-[10px] text-[#ffe871] font-medium">
+          <span className="font-ubuntu px-4 py-2 bg-[#ffe871]/20 rounded-[10px] text-[#ffe871] font-medium">
             2+ Years in Development Experience
           </span>
           {/* <span className="px-4 py-2 bg-[#ffe871]/20 rounded-full text-[#ffe871] font-medium">
@@ -88,7 +88,7 @@ const Hero = () => {
         </p> */}
 
         {/* Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="font-ubuntu flex flex-col sm:flex-row gap-4 justify-center">
           <button
             onClick={() =>
               document
@@ -105,7 +105,7 @@ const Hero = () => {
                 .getElementById("Project")
                 ?.scrollIntoView({ behavior: "smooth" })
             }
-            className="px-8 py-4 border-2 border-[#ffe871] text-[#ffe871] font-bold rounded-[5px] hover:bg-[#ffe871] hover:text-[#202733] transition-all duration-300 transform hover:scale-105"
+            className="font-ubuntu px-8 py-4 border-2 border-[#ffe871] text-[#ffe871] font-bold rounded-[5px] hover:bg-[#ffe871] hover:text-[#202733] transition-all duration-300 transform hover:scale-105"
           >
             View My Work
           </button>
