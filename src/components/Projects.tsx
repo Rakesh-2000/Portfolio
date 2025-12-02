@@ -191,25 +191,24 @@ const Projects = () => {
 
             {/* Main Mobile Phone Mockup (Center) */}
             <div className="relative z-10">
-  {/* Phone Frame */}
-  <div className="w-52 sm:w-64 md:w-80 h-[400px] sm:h-[500px] md:h-[600px] bg-gray-900 rounded-[3rem] p-2 shadow-2xl mx-auto">
-    <div className="w-full h-full bg-black rounded-[2.5rem] p-2 relative overflow-hidden">
-      {/* Screen */}
-      <div className="w-full h-full bg-white rounded-[2rem] overflow-hidden relative">
-        <img
-          src={projects[currentProject].image}
-          alt={projects[currentProject].title}
-          className="w-full h-full object-cover transition-all duration-500"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-      </div>
+              {/* Phone Frame */}
+              <div className="w-52 sm:w-64 md:w-80 h-[400px] sm:h-[500px] md:h-[600px] bg-gray-900 rounded-[3rem] p-2 shadow-2xl mx-auto">
+                <div className="w-full h-full bg-black rounded-[2.5rem] p-2 relative overflow-hidden">
+                  {/* Screen */}
+                  <div className="w-full h-full bg-white rounded-[2rem] overflow-hidden relative">
+                    <img
+                      src={projects[currentProject].image}
+                      alt={projects[currentProject].title}
+                      className="w-full h-full object-cover transition-all duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                  </div>
 
-      {/* Home Indicator */}
-      <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-16 sm:w-24 h-1 bg-white rounded-full"></div>
-    </div>
-  </div>
-</div>
-
+                  {/* Home Indicator */}
+                  <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-16 sm:w-24 h-1 bg-white rounded-full"></div>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Project Indicators */}

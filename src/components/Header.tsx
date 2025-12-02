@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import { HiMenu, HiX } from 'react-icons/hi';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -16,41 +17,63 @@ const Header = () => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+      setMenuOpen(false); // close menu on mobile after clicking
     }
   };
 
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-[#202733] bg-transparent' : 'bg-transparent'
-      }`}
+    <header
+      className={`fixed left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300
+        ${isScrolled
+          ? 'bg-[#47442463] backdrop-blur-md shadow-lg'
+          : 'bg-transparent'}
+        border border-[#ffe871]/40 rounded-[50px] mt-4 w-full max-w-7xl px-4`}
     >
-      <div className=" max-w-7xl mx-auto px-6 py-4">
-        <div className="flex justify-between items-center">
-          <div className="font-ubuntu text-5xl font-bold text-[#ffe871]">
-            RAKESH
-          </div>
-          
-          <nav className="font-ubuntu hidden md:flex space-x-8">
-            {['Home', 'About', 'Connect'].map((item) => (
-              <button
-                key={item}
-                onClick={() => scrollToSection(item.toLowerCase())}
-                className="text-[#f8fcff] hover:text-[#ffe871] transition-colors duration-300 font-medium relative group"
-              >
-                {item}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#ffe871] transition-all duration-300 group-hover:w-full"></span>
-              </button>
-            ))}
-          </nav>
+      <div className="w-full px-6 py-4 flex justify-between items-center">
+        {/* Logo */}
+        <div className="font-ubuntu text-4xl md:text-5xl font-bold text-[#ffe871] cursor-pointer" onClick={() => scrollToSection('home')}>
+          RK
+        </div>
 
-          {/* <button className="md:hidden text-[#f8fcff] hover:text-[#ffe871] transition-colors">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button> */}
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex font-ubuntu space-x-8">
+          {['Home', 'About', 'Connect'].map((item) => (
+            <button
+              key={item}
+              onClick={() => scrollToSection(item.toLowerCase())}
+              className="text-[#f8fcff] hover:text-[#ffe871] transition-colors duration-300 font-medium relative group"
+            >
+              {item}
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#ffe871] transition-all duration-300 group-hover:w-full"></span>
+            </button>
+          ))}
+        </nav>
+
+        {/* Mobile Hamburger */}
+        <div className="md:hidden flex items-center">
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="text-[#ffe871] text-3xl focus:outline-none"
+          >
+            {menuOpen ? <HiX /> : <HiMenu />}
+          </button>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="md:hidden  backdrop-blur-md border-t border-[#ffe871]/40 rounded-b-[30px] px-6 py-4 flex flex-col space-y-4 font-ubuntu">
+          {['Home', 'About', 'Connect'].map((item) => (
+            <button
+              key={item}
+              onClick={() => scrollToSection(item.toLowerCase())}
+              className="text-[#f8fcff] hover:text-[#ffe871] text-lg font-medium transition-colors duration-300"
+            >
+              {item}
+            </button>
+          ))}
+        </div>
+      )}
     </header>
   );
 };

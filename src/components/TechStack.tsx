@@ -1,46 +1,86 @@
-import React from "react";
 import {
-  Smartphone,
-  Globe,
-  Code,
-  FileCode,
-  Server,
-  Flame,
-  Navigation,
   Package,
-  Palette,
   GitBranch,
-  Zap,
-  Terminal,
-  Triangle,
 } from "lucide-react";
+import LogoLoop, { LogoItem } from "./logoloop"; // Import your LogoLoop
+import { RiNextjsLine, RiReactjsFill, RiTailwindCssFill } from "react-icons/ri";
+import { SiRedux, SiTypescript } from "react-icons/si";
+import { IoLogoCss3 } from "react-icons/io";
+import { IoLogoFirebase } from "react-icons/io5";
+import { FaHtml5, FaJs, FaPython } from "react-icons/fa";
+import { DiNodejs } from "react-icons/di";
 
 const TechStack = () => {
-  const technologies = [
+  const technologies: LogoItem[] = [
     // Languages
-    { name: "JavaScript", color: "#F7DF1E", icon: Code },
-    { name: "TypeScript", color: "#3178C6", icon: FileCode },
-    { name: "Python", color: "#009688", icon: Terminal },
+    {
+      node: <FaJs color="#F7DF1E" size={40} />,
+      title: "JavaScript",
+      href: "#",
+    },
+    { node: <FaHtml5 color="#E34F26" size={40} />, title: "HTML5", href: "#" },
+    {
+      node: <SiTypescript color="#3178C6" size={40} />,
+      title: "TypeScript",
+      href: "#",
+    },
+    {
+      node: <IoLogoCss3 color="#1572B6" size={40} />,
+      title: "CSS3",
+      href: "#",
+    },
+    {
+      node: <FaPython color="#009688" size={40} />,
+      title: "Python",
+      href: "#",
+    },
 
     // Frameworks
-    { name: "React.js", color: "#61DAFB", icon: Globe },
-    { name: "React Native", color: "#61DAFB", icon: Smartphone },
-    { name: "FastAPI", color: "#009688", icon: Zap },
-    { name: "Node.js", color: "#339933", icon: Server },
-    { name: "Next.js", color: "#FFF", icon: Triangle },
+    {
+      node: <RiReactjsFill color="#61DAFB" size={40} />,
+      title: "React.js",
+      href: "#",
+    },
 
-    // Libraries
-    { name: "Redux", color: "#764ABC", icon: Package },
-    { name: "React Navigation", color: "#61DAFB", icon: Navigation },
+    {
+      node: <RiNextjsLine color="#FFF" size={40} />,
+      title: "Next.js",
+      href: "#",
+    },
+    {
+      node: <DiNodejs color="#339933" size={40} />,
+      title: "Node.js",
+      href: "#",
+    },
+    {
+      node: <RiReactjsFill color="#61DAFB" size={40} />,
+      title: "React Native",
+      href: "#",
+    },
+    // State management
+    { node: <SiRedux color="#764ABC" size={40} />, title: "Redux", href: "#" },
+    {
+      node: <Package color="#000000" size={40} />,
+      title: "Zustand",
+      href: "#",
+    }, // Placeholder icon
 
     // Tools
-    { name: "Git", color: "#F05032", icon: GitBranch },
+    { node: <GitBranch color="#F05032" size={40} />, title: "Git", href: "#" },
 
     // Styling
-    { name: "Tailwind CSS", color: "#06B6D4", icon: Palette },
+    {
+      node: <RiTailwindCssFill color="#06B6D4" size={40} />,
+      title: "Tailwind CSS",
+      href: "#",
+    },
 
     // Platforms
-    { name: "Firebase", color: "#FFCA28", icon: Flame },
+    {
+      node: <IoLogoFirebase color="#FFCA28" size={40} />,
+      title: "Firebase",
+      href: "#",
+    },
   ];
 
   return (
@@ -48,24 +88,6 @@ const TechStack = () => {
       id="about"
       className="font-ubuntu py-20 px-6 bg-black relative overflow-hidden"
     >
-      {/* Keyframes for desktop carousel */}
-      <style>
-        {`
-    @keyframes scroll {
-      0% {
-        transform: translateX(0%);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-
-    .animate-scroll {
-      animation: scroll linear infinite;
-    }
-  `}
-      </style>
-
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
         <div className="text-center mb-16">
@@ -77,57 +99,20 @@ const TechStack = () => {
           </p>
         </div>
 
-        {/* Tech Icons */}
+        {/* LogoLoop Carousel */}
         <div className="overflow-hidden py-2">
-          {/* Mobile: Two rows */}
-          <div className="grid grid-cols-2 gap-4 sm:hidden ">
-            {[...technologies, ...technologies]
-              .slice(0, 13)
-              .map((tech, index) => (
-                <div
-                  key={`mobile-${tech.name}-${index}`}
-                  className="flex items-center space-x-3 border border-[#ffe871]/30 rounded-xl p-3 bg-[#ffe871]/5"
-                >
-                  <tech.icon
-                    className="w-5 h-5"
-                    style={{ color: tech.color }}
-                  />
-                  <span
-                    className="text-sm font-medium"
-                    style={{ color: tech.color }}
-                  >
-                    {tech.name}
-                  </span>
-                </div>
-              ))}
-          </div>
-
-          {/* Desktop: One-line carousel */}
-          {/* Desktop: One-line infinite carousel */}
-          <div className="hidden sm:block overflow-hidden py-2">
-            <div
-              className="flex w-max animate-scroll whitespace-nowrap"
-              style={{ animationDuration: "25s" }}
-            >
-              {[...technologies, ...technologies].map((tech, index) => (
-                <div
-                  key={`${tech.name}-${index}`}
-                  className="min-w-[180px] flex-shrink-0 border border-[#ffe871]/30 rounded-[5px] p-4 text-center bg-[#ffe871]/5 hover:scale-105 transition-transform duration-300 mx-2"
-                >
-                  <tech.icon
-                    className="w-6 h-6 mx-auto mb-2"
-                    style={{ color: tech.color }}
-                  />
-                  <span
-                    className="text-sm font-medium"
-                    style={{ color: tech.color }}
-                  >
-                    {tech.name}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
+          <LogoLoop
+            logos={technologies}
+            speed={50}
+            direction="left"
+            logoHeight={78}
+            gap={40}
+            hoverSpeed={10}
+            scaleOnHover
+            fadeOut
+            fadeOutColor="#000"
+            ariaLabel="Technology partners"
+          />
         </div>
       </div>
 
